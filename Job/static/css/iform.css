@@ -1,0 +1,26 @@
+ body {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        position: absolute;
+        width: 99%;
+        height: 99%;
+    }
+    #iframeTop {
+        margin-top: -20px;
+        width: 100%;
+        height: 25%;
+    }
+
+    #iframeLeft {
+        width: 25%;
+        float: left;
+        height: 75%;
+    }
+
+    #iframeContent {
+        width: 75%;
+        height: 75%;
+    }

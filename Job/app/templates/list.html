@@ -1,0 +1,409 @@
+{% extends 'layouts/master_blade.html' %}
+{% block title %}
+    <title>职位</title>
+{% endblock title %}
+
+
+
+{% block content %}
+    <br>
+    <br>
+    <div class="container">
+        <div class="col-md-7 col-md-offset-2">
+            <div class="input-group">
+                <input type="text" name="kw" id="kw" class="form-control" placeholder="搜索职位" value="{{ msg }}">
+                <span class="input-group-btn">
+                 <button class="btn btn-default" id="kw_btn" type="button"
+                         url="{% url 'zhilian:jobs' 1 %}">搜索</button>
+             </span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <div class="col-md-1" style="font-size: 18px"><b>地点:</b></div>
+        <ul id="queryTitleUls" class="clearfix">
+            <li class="col-md-1 bg-primary"
+                style="line-height:26px;font-size: 16px;height: 25px;text-align: center;"
+                id="citys">全国<span class="span_down"></span></li>
+            <li class="localType" style="display:none;">
+                <div class="localTypeText"><span class="localName">行政区</span> <span class="arrow_down"></span>
+
+                <span class="localName">地铁沿线</span> <span class="arrow_down"
+                                                                                     style="right: 18px"></span>
+                </div>
+            </li>
+        </ul>
+        <div class="container" style="display: none;" id="city_hid">
+            <div class="cityChild">
+                <ul class="choiseCity clearfix ">
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1 zp-query city_1Checked city_1">全国</a></li>
+                    <li class="cityItemBox"><a href="#" class="zp-query city_1 ">北京</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1 ">上海</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1 ">深圳</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1 ">广州</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1 ">天津</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1 ">成都</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">杭州</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1 ">武汉</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1 ">大连</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1 ">长春</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">南京</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">济南</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">青岛</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">苏州</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">沈阳</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">西安</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">郑州</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">长沙</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">重庆</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">哈尔滨</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">无锡</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">宁波</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">福州</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">厦门</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">石家庄</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">合肥</a></li>
+                    <li class="cityItemBox"><a href="#"
+                                               class="zp-query city_1">惠州</a></li>
+                    <div class="cityItemBox other_cityLi"><span class="item_name">其他国内外地区：</span> <input
+                            type="text" placeholder="输入地区名称" class="other_cityInp search-city"> <i
+                            style="display: none;"></i> <!----></div>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <div style="clear:both"></div>
+    <div class="container">
+        <hr>
+    </div>
+    <div class="container" id="job">
+        <div class="col-md-1" style="font-size: 18px"><b>职位:</b></div>
+        <div class="col-md-1 bg-primary job" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">
+            不限
+        </div>
+         <div class="col-md-1 job" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">数据分析
+        </div>
+        <div class="col-md-1 job" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">人工智能
+        </div>
+        <div class="col-md-1 job" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">爬虫
+        </div>
+        <div class="col-md-1 job" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">讲师
+        </div>
+        <div class="col-md-1 job" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">web开发
+        </div>
+    </div>
+
+    <div class="container">
+        <hr>
+    </div>
+    <div class="container" id="wage">
+        <div class="col-md-1" style="font-size: 18px"><b>月薪:</b></div>
+        <div class="col-md-1 bg-primary wage"
+             style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">
+            不限
+        </div>
+        <div class="col-md-1 wage" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">7k以下
+        </div>
+        <div class="col-md-1 wage" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">7k-10k
+        </div>
+        <div class="col-md-1 wage" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">10k-15k
+        </div>
+        <div class="col-md-1 wage" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">15k-20k
+        </div>
+        <div class="col-md-1 wage" style="line-height:26px;font-size: 16px;height: 25px;text-align: center;">20k以上
+        </div>
+    </div>
+    <div class="container">
+        <hr>
+    </div>
+    <div class="container">
+        <div class="col-md-1" style="font-size: 18px"><b>其他:</b></div>
+        <div class="dropdown col-md-1" style="margin-left: -12px">
+            <button class="btn btn-sm dropdown-toggle exs" id="dropdownMenu1" data-toggle="dropdown"
+                 aria-haspopup="true" aria-expanded="true">
+                工作经验
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#" class="ex">不限</a></li>
+                <li><a href="#" class="ex">无经验</a></li>
+                <li><a href="#" class="ex">1-3年</a></li>
+                <li><a href="#" class="ex">10年以上</a></li>
+                <li><a href="#" class="ex">1年以下</a></li>
+                <li><a href="#" class="ex">3-5年</a></li>
+                <li><a href="#" class="ex">5-10年</a></li>
+
+            </ul>
+        </div>
+        <div class="col-md-1" style="margin-left: 20px">
+            <div class="dropdown">
+                <button class="btn btn-sm dropdown-toggle edus" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                    学历要求
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#" class="edu">不限</a></li>
+                    <li><a href="#" class="edu">本科</a></li>
+                    <li><a href="#" class="edu">硕士</a></li>
+                    <li><a href="#" class="edu">博士</a></li>
+                    <li><a href="#" class="edu">大专</a></li>
+                    <li><a href="#" class="edu">中专</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-1" style="margin-left: 20px">
+            <div class="dropdown">
+                <button class="btn btn-sm dropdown-toggle cams" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                    公司性质
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#" class="cam">不限</a></li>
+                    <li><a href="#" class="cam">国企</a></li>
+                    <li><a href="#" class="cam">外商独资</a></li>
+                    <li><a href="#" class="cam">代表处</a></li>
+                    <li><a href="#" class="cam">合资</a></li>
+                    <li><a href="#" class="cam">民营</a></li>
+                    <li><a href="#" class="cam">股份制企业</a></li>
+                    <li><a href="#" class="cam">上市公司</a></li>
+                    <li><a href="#" class="cam">国家机关</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div id="results">
+    </div>
+    <div class="container">
+        <div class="col-md-9 col-md-offset-7">
+            <nav aria-label="Page navigation">
+                <ul class="pagination" id="page_btn">
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        var i = 1;
+        var hiddenBox = $("#city_hid");
+        var p = 1;
+        $("#citys").on("click", function (event) {
+            if (i == 1) {
+
+                hiddenBox.show();
+                i = 2;
+            } else {
+
+                hiddenBox.hide();
+                i = 1;
+            }
+        });
+        $(".city_1").on("click", function (event) {
+
+            hiddenBox.hide();
+            $(".localType").show();
+            i = 1;
+            $("#citys").text($(this).text());
+            p = 1;
+            search()
+        });
+        $(".job").on("click",function () {
+           $('#job .bg-primary').removeClass('bg-primary');
+            $(this).addClass('bg-primary');
+            p = 1;
+            search()
+        });
+        $('.wage').click(function () {
+            $('#wage .bg-primary').removeClass('bg-primary');
+            $(this).addClass('bg-primary');
+            p = 1;
+            search()
+        });
+         $('.ex').click(function () {
+             if ($(this).text() == '不限'){
+                 $('.exs').text('工作经验')
+             }else{
+                $('.exs').text($(this).text());
+            }
+            p = 1;
+            search();
+        });
+        $('.edu').click(function () {
+            if ($(this).text() == '不限'){
+                $('.edus').text('学历要求')
+            }else{
+                $('.edus').text($(this).text());
+            }
+            p = 1;
+            search();
+        });
+         $('#kw_btn').click(function () {
+            p = 1;
+            search();
+        });
+       function next() {
+            p = Number($('.active').text())+1;
+            search();
+        }
+        $(document).ready(function () {
+            p = 1;
+            search();
+        });
+        function pre() {
+            p = Number($('.active').text())-1;
+            search();
+        }
+        function page1() {
+            p = Number($(".page_num1").text());
+            search()
+        }
+        function page2() {
+            p = Number($(".page_num2").text());
+            search()
+        }
+        function page3() {
+            p = Number($(".page_num3").text());
+            search()
+        }
+        function page4() {
+            p = Number($(".page_num4").text());
+            search()
+        }
+        function page5() {
+            p = Number($(".page_num5").text());
+            search()
+        }
+
+
+         function search() {
+            $.ajax({
+                type: 'post',
+                dataType: "json",
+                data: {
+                    'kw': $('#kw').val(),
+                    'city': $('#citys').text(),
+                    'exs': $('.exs').text(),
+                    'edu': $('.edus').text(),
+                    'wage': $('#wage .bg-primary').text(),
+                    'page': p,
+                    'job':$('#job .bg-primary').text()
+                },
+                url: $('#kw_btn').attr('url'),
+                success: function (data) {
+                    render(data);
+                    add_page_btn(data.num_page, data.page)
+                }
+
+            })
+        }
+        function render(results) {
+            var html = '';
+            for (var i = 0; i < results.msg.length; i++) {
+                var ru_data = JSON.parse(results.msg[i]);
+                html += '<div class="container"><div class="col-md-9 col-md-offset-1"><div>' +
+                    '<div class="col-md-7" style="height: 30px;line-height:30px;font-size: 18px;"><a href ="work_detail/' + String(ru_data['id']) + '/">' + ru_data['job_title'] + '</a></div><div class="col-md-offset-8" style="height: 30px;line-height:30px;font-size: 16px;">' + ru_data['company_name'] + '</div><br><div><div class="col-md-9" style="height: 30px;line-height:30px;font-size: 14px;"><span style="font-size: 18px;color: red;">&nbsp' + ru_data['wage'] + '&nbsp</span>|&nbsp' + ru_data['location'] + '&nbsp| &nbsp' + ru_data['work_experience'] + '</div></div></div></div></div><div class="container"><hr></div>'
+            }
+            $('#results').html(html);
+        }
+        function add_page_btn(num_total, num_page) {
+            var html = '';
+            if (num_page > 1) {
+                html += '<li><a id="pre" href="javascript:void(0)" onclick="pre()">上一页</a></li>'
+            } else {
+                html += '<li><a>&laquo;</a></li>'
+            }
+            if (num_total <= 6) {
+                for (var i = 0; i < num_total; i++) {
+                    if (num_page == i + 1) {
+                        html += '<li class="active"><a href="javascript:void(0)">' + String(i + 1) + '</a></li>'
+                    } else {
+{#                        html += '<li><a href="javascript:void(0)" class="page_num">' + String(i + 1) + '</a></li>'#}
+                        html += '<li><a href="javascript:void(0)" class="page_num' + String(i + 1) + '" onclick="page' + String(i + 1) + '()">' + String(i + 1) + '</a></li>'
+                    }
+                    }
+
+                }
+            else {
+                if (num_page < 4) {
+                    for (var j = 1; j < 6; j++) {
+                        if (num_page == j) {
+                            html += '<li class="active"><a href="javascript:void(0)">' + String(j) + '</a></li>'
+                        } else {
+                            html += '<li><a href="javascript:void(0)" class="page_num' + String(j) + '" onclick="page' + String(j) + '()">' + String(j) + '</a></li>'
+                        }
+                    }
+
+                    html += '<li><a href="javascript:void(0) ">...</a></li>'
+                }else if(num_page>num_total-4){
+                    html+='<li><a href="javascript:void(0)" class="page_num" onclick="page1()">1</a></li>';
+                    html += '<li><a href="javascript:void(0)">...</a></li>';
+                    for (var k=3;k>=0;k--){
+                        if (num_page==num_total-k){
+                          html += '<li class="active"><href="javascript:void(0)" class="page_num">' + String(num_total-k) + '</a></li>'
+                        } else {
+                            html += '<li><a href="javascript:void(0)" class="page_num">' + String(num_total-k) + '</a></li>'
+                        }
+                    }
+
+                }else {
+                    html+='<li><a href="javascript:void(0)" class="page_num1" onclick="page1()">1</a></li>';
+                    html+='<li><a href="javascript:void(0)">...</a></li>';
+                    html+='<li><a href="javascript:void(0)" class="page_num3" onclick="page3()">'+String(num_page-1)+'</a></li>';
+                    html+='<li class="active"><a href="javascript:void(0)">'+String(num_page)+'</a></li>';
+                    html+='<li><a href="javascript:void(0)" class="page_num3" onclick="page3()">'+String(num_page+1)+'</a></li>';
+                    html+='<li><a href="javascript:void(0)">...</a></li>';
+
+                }
+
+            }
+
+            if (num_page == num_total) {
+                html += '<li><a>&raquo;</a></li>'
+            } else {
+                html += '<li><a id="next" href="javascript:void(0)" onclick="next()">下一页</a></li>'
+            }
+            $('#page_btn').html(html);}
+
+
+
+
+
+    </script>
+
+{% endblock %}

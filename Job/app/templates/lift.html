@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="utf-8">
+<style type="text/css">
+	li {
+		line-height: 35px;
+        font-size: 16px;
+        list-style: none;
+	}
+	a {
+		text-decoration: none;
+	}
+</style>
+<base target="iframeContent">
+</head>
+
+<body style="margin-top: 30px">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" class="active"><a href="{% url 'zhilian:index' %}">工作经验</a></li>
+      <li role="presentation"><a href="{% url 'zhilian:index1' %}">工作地点</a></li>
+      <li role="presentation"><a href="{% url 'zhilian:index2' %}">工作要求</a></li>
+    </ul>
+{#	<ul>#}
+{#		<li><a href="{% url 'zhilian:index' %}">工作经验</a></li>#}
+{#        <li><a href="{% url 'zhilian:index1' %}">工作地点</a></li>#}
+{#        <li><a href="{% url 'zhilian:index2' %}">工作要求</a></li>#}
+{#	</ul>#}
+</body>
+</html>

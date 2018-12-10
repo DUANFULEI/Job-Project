@@ -1,0 +1,171 @@
+.cityChild {
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+}
+#queryCityBox #queryTitleUls {
+    width: 100%;
+    line-height: 32px;
+}
+
+.clearfix {
+    zoom: 1;
+    display: block;
+}
+#queryCityBox {
+    width: 100%;
+}
+#search .div_border .itemName {
+    float: left;
+    font-weight: 700;
+    width: 42px;
+    line-height: 28px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
+}
+#search .div_border .itemContent {
+    margin-left: 10px;
+    box-sizing: border-box;
+    padding-left: 16px;
+    line-height: 17px;
+    font-size: 12px;
+    color: #666;
+    letter-spacing: 0;
+}
+div {
+    display: block;
+}
+.cityChild .choiseCity .cityItemBox {
+    float: left;
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+    margin: 5px 10px;
+    margin-left: 0;
+}
+
+li, ul {
+    list-style: none;
+}
+
+.cityChild .choiseCity .other_cityLi {
+    width: 300px;
+    margin-left: 3px;
+    position: relative;
+    box-sizing: border-box;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+#queryCityBox #queryTitleUls .currentCity {
+    font-family: PingFangSC-Regular,Microsoft YaHei;
+    font-size: 12px;
+    line-height: 25px;
+    color: #fff;
+    letter-spacing: .61px;
+    background: #1787fb;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    padding: 0 26px 0 10px;
+    margin-top: 2px;
+}
+li, ul {
+    list-style: none;
+}
+
+element.style {
+}
+#queryCityBox #queryTitleUls .currentCity .span_up {
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    top: 11px;
+}
+
+#queryCityBox #queryTitleUls .currentCity .span_down, #queryCityBox #queryTitleUls .currentCity .span_up {
+    display: inline-block;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    width: 4px;
+    height: 4px;
+    -webkit-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    transform: rotate(315deg);
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+#queryCityBox #queryTitleUls .currentCity {
+    font-family: PingFangSC-Regular,Microsoft YaHei;
+    font-size: 12px;
+    line-height: 25px;
+    color: #fff;
+    letter-spacing: .61px;
+    background: #1787fb;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    padding: 0 26px 0 10px;
+    margin-top: 2px;
+}
+.cityChild {
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+}
+blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, ol, p, pre, table, td, textarea, th, ul {
+    font-family: PingFang SC,Microsoft YaHei,Lantinghei SC,Helvetica Neue,Helvetica,Arial,\\5FAE\8F6F\96C5\9ED1,STHeitiSC-Light,simsun,\\5B8B\4F53,WenQuanYi Zen Hei,WenQuanYi Micro Hei,"sans-serif";
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#queryCityBox #queryTitleUls .localType .localTypeText .localName {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+#queryCityBox #queryTitleUls .localType .localTypeText {
+    display: inline-block;
+    padding: 0 4px;
+    font-size: 12px;
+    line-height: 25px;
+    color: #666;
+    letter-spacing: .61px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0 26px 0 10px;
+}
+blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, ol, p, pre, table, td, textarea, th, ul {
+    font-family: PingFang SC,Microsoft YaHei,Lantinghei SC,Helvetica Neue,Helvetica,Arial,\\5FAE\8F6F\96C5\9ED1,STHeitiSC-Light,simsun,\\5B8B\4F53,WenQuanYi Zen Hei,WenQuanYi Micro Hei,"sans-serif";
+    margin: 0;
+    padding: 0;
+    border: 0;
+}

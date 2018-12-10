@@ -1,0 +1,37 @@
+<title>职位详情</title>
+{% extends 'layouts/master_blade.html' %}
+{% block content %}
+    <h1 style="text-align: center">职位详情</h1>
+    <div class="container" style="margin-top: 30px">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>职位名称：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.position }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>公司名称：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.company }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>职位月薪：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.pay_a }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>工作地点：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.address }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>工作经验与学历要求：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.job_term }}</span></div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-2 text-right"><span style="font-size: 18px"><b>工作详情：</b></span></div>
+        <div class="col-md-8"><span style="font-size: 16px">{{ msg.job_des}}</span></div>
+    </div>
+
+
+
+{% endblock %}
